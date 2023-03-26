@@ -1,8 +1,18 @@
-import { Html, Head, Main, NextScript } from 'next/document'
 
-export default function Document() {
+import Document, {Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document'
+
+class MyDocument extends Document {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
+    const initialProps = await Document.getInitialProps(ctx)
+
+    return initialProps
+  }
+
+  render(){
   return (
-    <Html lang="en">
+    <Html lang="ru">
       <Head />
       <body>
         <Main />
@@ -11,3 +21,5 @@ export default function Document() {
     </Html>
   )
 }
+}
+export default MyDocument
