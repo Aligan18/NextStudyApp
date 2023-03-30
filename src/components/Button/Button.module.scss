@@ -1,6 +1,6 @@
 .button {
     display: inline-block;
-
+   
     box-sizing: border-box;
     padding:10px;
 
@@ -20,7 +20,13 @@
     border: 1px solid var(--white);
 
     &:hover { background-color: var(--primary-hover);}
+
+    img {
+        fill: var(--white)
+    }
 }
+
+
 
 
 .ghost{
@@ -31,4 +37,15 @@
     &:hover { background-color: var(--primary);
               color:var(--white);
             }
+}
+
+
+.arrow{
+    display: inline-block;
+    width:5px;
+    color:wheat
+}
+
+.arrow_down {
+    transform: rotate(90deg);
 }
