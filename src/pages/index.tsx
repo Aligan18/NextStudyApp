@@ -5,11 +5,15 @@ import { EHtags } from '@/components/Htag/Htag.props'
 import TextBox from '@/components/TextBox/TextBox'
 import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import classes from './index.module.scss'
-import React from 'react'
+import React, { useState } from 'react'
 import Teg from '@/components/Teg/Teg'
 import { ETegAppearance, ETegSize } from '@/components/Teg/Teg.props'
+import StarIcon from '@/components/StarGroup/StarIcon/StarIcon'
+import StarGroup from '@/components/StarGroup/StarGroup'
 
 const Home = () => {
+  const [rating, setRating] =useState(3)
+
   return (
     <>
     <Htag tag={EHtags.LARGE}> Hello World </Htag>
@@ -26,7 +30,7 @@ const Home = () => {
       <Teg size={ETegSize.SMALL} appearance={ETegAppearance.GREEN}>Hello</Teg>
       <Teg appearance={ETegAppearance.RED}>Hello</Teg>
       <Teg href={"https://www.figma.com/file/eHIyKZXUUtMf1BQiuv6tTA/Курс-2---NextJS?node-id=0-1&t=3RAfZ5NVmaCTfVue-0"} size={ETegSize.SMALL} appearance={ETegAppearance.WHITE}> Figma </Teg>
-
+      <StarGroup rating={rating} setRating={setRating}  />
     </>
   )
 }
