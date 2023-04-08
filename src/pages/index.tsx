@@ -10,12 +10,13 @@ import Teg from '@/components/Teg/Teg'
 import { ETegAppearance, ETegSize } from '@/components/Teg/Teg.props'
 import StarIcon from '@/components/StarGroup/StarIcon/StarIcon'
 import StarGroup from '@/components/StarGroup/StarGroup'
+import Layout from '@/layout/Layout'
 
 const Home = () => {
   const [rating, setRating] =useState(3)
 
   return (
-    <>
+    <Layout>
     <Htag tag={EHtags.LARGE}> Hello World </Htag>
     <Htag tag={EHtags.MEDIUM}> Hello World </Htag>
     <Htag tag={EHtags.SMALL}> Hello World </Htag>
@@ -31,7 +32,7 @@ const Home = () => {
       <Teg appearance={ETegAppearance.RED}>Hello</Teg>
       <Teg href={"https://www.figma.com/file/eHIyKZXUUtMf1BQiuv6tTA/Курс-2---NextJS?node-id=0-1&t=3RAfZ5NVmaCTfVue-0"} size={ETegSize.SMALL} appearance={ETegAppearance.WHITE}> Figma </Teg>
       <StarGroup rating={rating} setRating={setRating}  />
-    </>
+    </Layout>
   )
 }
 
