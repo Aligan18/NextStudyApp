@@ -1,8 +1,9 @@
 import React from 'react'
+import { IFooterProps } from './Footer.props'
 
-const Footer = () => {
+const Footer = ({...props}:IFooterProps) => {
   return (
-    <div>Footer</div>
+    <div {...props}>Footer</div>
   )
 }
 

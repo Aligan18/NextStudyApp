@@ -1,8 +1,9 @@
 import React from 'react'
+import { ISideBarProps } from './SideBar.props'
 
-const SideBar = () => {
+const SideBar = ({...props}:ISideBarProps) => {
   return (
-    <div>SideBar</div>
+    <div {...props}>SideBar</div>
   )
 }
 

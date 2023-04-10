@@ -1,8 +1,9 @@
 import React from 'react'
+import { IHomeProps } from './Header.props'
 
-const Header = () => {
+const Header = ({...props}:IHomeProps) => {
   return (
-    <div>Header</div>
+    <div {...props}>Header</div>
   )
 }
 
