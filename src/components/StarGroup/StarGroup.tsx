@@ -22,7 +22,7 @@ const StarGroup = ({quantity=5, rating, setRating }:IStarGroupProps) => {
                   key={index} 
                   filled={index < currentRating}/>
      )})
-     console.log(updatedRating)
+     
       setTotalStars(updatedRating)
   }
 

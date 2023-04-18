@@ -12,8 +12,12 @@ import StarIcon from '@/components/StarGroup/StarIcon/StarIcon'
 import StarGroup from '@/components/StarGroup/StarGroup'
 import Layout from '@/layout/Layout'
 import { withLayout } from '@/hoc/withLayout'
+import { GetStaticProps } from 'next'
+import axios from 'axios'
+import { HookCallbacks } from 'async_hooks'
+import { IMenuModel } from '@/interfaces/menu.interface'
 
-const Home = () => {
+const Home = ({menu,firstCategory}:IHomeProps) => {
   const [rating, setRating] =useState(3)
 
   return (
@@ -33,8 +37,31 @@ const Home = () => {
       <Teg appearance={ETegAppearance.RED}>Hello</Teg>
       <Teg href={"https://www.figma.com/file/eHIyKZXUUtMf1BQiuv6tTA/Курс-2---NextJS?node-id=0-1&t=3RAfZ5NVmaCTfVue-0"} size={ETegSize.SMALL} appearance={ETegAppearance.WHITE}> Figma </Teg>
       <StarGroup rating={rating} setRating={setRating}  />
+      <ul>
+            {menu.map((m)=><li key={m._id.secondCategory}>{m._id.secondCategory}</li>)}
+      </ul>
     </>
   )
 }
 
+export const getStaticProps : GetStaticProps<IHomeProps> = async () =>{
+  const   firstCategory = 0
+  const { data:menu } = await axios.post<IMenuModel[]>(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",{firstCategory})
+
+  return {
+       
+      props: {
+        menu,
+        firstCategory
+      }
+  }
+}
+
 export default withLayout( Home) 
+
+interface IHomeProps extends Record<string,unknown>{
+  menu: IMenuModel[],
+  firstCategory: number
+  
+}
+

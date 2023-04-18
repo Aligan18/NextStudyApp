@@ -8,7 +8,7 @@
 	--green : #1DC37E;
 	--green-light : #C8F8E4;
 	--gray-light : #EBEBEB;
-	--font-family:  'Noto Sans', sans-serif;
+	--font-family:  "Noto Sans", sans-serif;
 	
 }
 
@@ -24,9 +24,7 @@
 html,
 body {
 	overflow-x: hidden;
-
 	max-width: 100vw;
-
 	font-family: var(--font-family)
 
 	
@@ -40,7 +38,6 @@ body {
 
 a {
 	text-decoration: none;
-
 	color: inherit;
 }
 
