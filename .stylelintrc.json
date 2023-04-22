@@ -2,6 +2,7 @@
    {
     "extends": "stylelint-config-standard-scss",
     "rules": {
+      "rule-empty-line-before":null,
       "string-quotes": "double",
       "selector-class-pattern": null,
       "declaration-block-no-redundant-longhand-properties":null

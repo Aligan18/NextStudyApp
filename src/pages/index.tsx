@@ -16,6 +16,7 @@ import { GetStaticProps } from 'next'
 import axios from 'axios'
 import { HookCallbacks } from 'async_hooks'
 import { IMenuModel } from '@/interfaces/menu.interface'
+import { ETopLevelCategory } from '@/interfaces/page.interface'
 
 const Home = ({menu,firstCategory}:IHomeProps) => {
   const [rating, setRating] =useState(3)
@@ -43,7 +44,7 @@ const Home = ({menu,firstCategory}:IHomeProps) => {
 }
 
 export const getStaticProps : GetStaticProps<IHomeProps> = async () =>{
-  const   firstCategory = 0
+  const   firstCategory = ETopLevelCategory.Courses
   const { data:menu } = await axios.post<IMenuModel[]>(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",{firstCategory})
 
   return {
@@ -59,7 +60,7 @@ export default withLayout( Home)
 
 interface IHomeProps extends Record<string,unknown>{
   menu: IMenuModel[],
-  firstCategory: number
+  firstCategory: ETopLevelCategory
   
 }
 

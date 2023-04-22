@@ -1,12 +1,12 @@
 import { withLayout } from '@/hoc/withLayout'
 import { IMenuModel } from '@/interfaces/menu.interface'
-import { ITopPageModel } from '@/interfaces/page.interface'
+import { ETopLevelCategory, ITopPageModel } from '@/interfaces/page.interface'
 import { IProductModel } from '@/interfaces/product.interface'
 import axios from 'axios'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import React from 'react'
-const firstCategory = 0
+const firstCategory = ETopLevelCategory.Courses
 const Courses = ({menu, page , product}:ICoursesProps) => {
   return (
     <div>
@@ -53,7 +53,7 @@ export const getStaticProps : GetStaticProps<ICoursesProps> = async({params}:Get
 
 
 interface ICoursesProps  extends Record<string, unknown> {
-    firstCategory:number
+    firstCategory:ETopLevelCategory
     menu: IMenuModel[]
     product:IProductModel[]
     page: ITopPageModel
