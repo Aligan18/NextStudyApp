@@ -37,9 +37,7 @@ const Home = ({menu,firstCategory}:IHomeProps) => {
       <Teg appearance={ETegAppearance.RED}>Hello</Teg>
       <Teg href={"https://www.figma.com/file/eHIyKZXUUtMf1BQiuv6tTA/Курс-2---NextJS?node-id=0-1&t=3RAfZ5NVmaCTfVue-0"} size={ETegSize.SMALL} appearance={ETegAppearance.WHITE}> Figma </Teg>
       <StarGroup rating={rating} setRating={setRating}  />
-      <ul>
-            {menu.map((m)=><li key={m._id.secondCategory}>{m._id.secondCategory}</li>)}
-      </ul>
+      
     </>
   )
 }

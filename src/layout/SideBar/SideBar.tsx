@@ -1,9 +1,12 @@
+import Menu from '@/components/Menu/Menu'
 import React from 'react'
 import { ISideBarProps } from './SideBar.props'
 
 const SideBar = ({...props}:ISideBarProps) => {
   return (
-    <div {...props}>SideBar</div>
+    <div {...props}>
+      <Menu/>
+    </div>
   )
 }
 
