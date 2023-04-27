@@ -23,12 +23,15 @@
 .second_category {
     cursor: pointer;
     margin-bottom: 13px;
-    margin-left: 42px;
+    margin-left: 45px;
     color: var(--gray-dark);
     font-weight: 500;
     font-size: 12px;
     line-height: 19px;
     text-transform: uppercase;
+}
+.second_category_selected{
+    color: var(--primary)
 }
 
 .thrid_category{
@@ -52,3 +55,10 @@
     }
 }
 
+.second_category_block{
+    display:none;
+}
+.second_category_block_opened{
+    display:block;
+    
+}
