@@ -6,6 +6,7 @@ import cn from 'classnames'
 import classes from "./Menu.module.scss"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { firstLevelMenu } from '@/helpers/firstLevelMenu'
 
 
 const Menu = () => {
@@ -13,14 +14,8 @@ const Menu = () => {
   const {menu,firstCategory,setMenu} = useMenuContext()
   const router = useRouter()
   
-
-
-  const menuArray : IFirstLevelMenuItem[] = 
-    [ {title:"Курсы",id: ETopLevelCategory.Courses , icon:<i className="fa-solid fa-graduation-cap"></i>, route : "courses" }, 
-      {title:"Сервесы", id: ETopLevelCategory.Services, icon:<i className="fa-solid fa-cloud"></i>, route : "courses" }, 
-      {title:"Книги", id:ETopLevelCategory.Books, icon:<i className="fa-solid fa-book"></i>, route : "courses" }, 
-      {title:"Товары", id:ETopLevelCategory.Products ,icon:<i className="fa-solid fa-box-open"></i>, route : "courses" }, 
-  ]
+  
+  
 
   const changeIsOpened =(secondCategory:string)=>{
     setMenu && setMenu(menu.map(m=>{
@@ -36,7 +31,7 @@ const Menu = () => {
 
 
     return <>
-                  {menuArray.map(menuItem=>
+                  {firstLevelMenu.map(menuItem=>
                       <div key={menuItem.id}>
                         <Link href ={`/${menuItem.route}`}>
                           <div >

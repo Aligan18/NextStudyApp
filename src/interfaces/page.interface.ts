@@ -1,8 +1,8 @@
 export enum ETopLevelCategory {
     Courses= 0,
     Services =1,
-    Books,
-    Products
+    Books =2,
+    Products=3
 }
 
 
