@@ -3,6 +3,7 @@ import { withLayout } from '@/hoc/withLayout'
 import { IMenuModel } from '@/interfaces/menu.interface'
 import { ETopLevelCategory, ITopPageModel } from '@/interfaces/page.interface'
 import { IProductModel } from '@/interfaces/product.interface'
+import { TopPageComponent } from '@/page-components'
 import axios from 'axios'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { ParsedUrlQuery } from 'querystring'
@@ -10,15 +11,16 @@ import React from 'react'
 
 
 
-const Type = ({menu, page , product}:ICoursesProps) => {
-  return (
-    <div>
-        {product && product.length}
-    </div>
-  )
+const TopPage = ({menu, page , product ,firstCategory}: ITopPageProps) => {
+
+  return <TopPageComponent  page={page} 
+                            product={product} 
+                            firstCategory={firstCategory}
+        />
+
 }
 
-export default  withLayout(Type)
+export default  withLayout(TopPage)
 
 
 export const getStaticPaths: GetStaticPaths = async()=>{
@@ -37,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async()=>{
 }
 
 
-export const getStaticProps : GetStaticProps<ICoursesProps> = async({params}:GetStaticPropsContext<ParsedUrlQuery>)=>{
+export const getStaticProps : GetStaticProps<ITopPageProps> = async({params}:GetStaticPropsContext<ParsedUrlQuery>)=>{
     if (!params){
         return {
             notFound:true
@@ -78,7 +80,7 @@ export const getStaticProps : GetStaticProps<ICoursesProps> = async({params}:Get
     }
 
 
-interface ICoursesProps  extends Record<string, unknown> {
+interface ITopPageProps  extends Record<string, unknown> {
     firstCategory:ETopLevelCategory
     menu: IMenuModel[]
     product:IProductModel[]

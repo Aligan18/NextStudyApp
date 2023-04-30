@@ -1,1 +1,10 @@
 /* Only comments */
+.wrapper {
+    display : grid;
+    row-gap: 20px;
+    align-content: flex-start;
+
+}
+.search {
+    margin-top: 35px;
+}
