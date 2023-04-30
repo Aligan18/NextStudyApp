@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { DetailedHTMLProps, HtmlHTMLAttributes, ReactNode } from "react";
 
-export interface HtegProps{
+export interface HtegProps extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLDivElement>,HTMLDivElement>{
     tag: EHtags
     children: ReactNode
 }

@@ -1,0 +1,6 @@
+.header_wrapper{
+    display:grid;
+    grid-template-columns: auto 1fr auto;
+    align-items:baseline;
+    gap:20px
+}

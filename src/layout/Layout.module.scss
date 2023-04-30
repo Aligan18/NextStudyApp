@@ -9,7 +9,7 @@
         ". sidebar body ."
         "footer footer footer footer";
     
-   @media (width < 768px) {
+   @media (width < 1024px) {
         grid-template-columns: minmax(320px, 1fr)  ;
         grid-template-areas: 
         "header"
@@ -22,7 +22,7 @@
     grid-area : header;
     display:none ;
 
-    @media (width < 768px) {
+    @media (width < 1024px) {
         display:block
     }
 }
@@ -30,7 +30,7 @@
 .sidebar {
     grid-area : sidebar;
 
-    @media (width < 768px) {
+    @media (width < 1024px) {
         display: none
     }
 }
