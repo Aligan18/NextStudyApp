@@ -9,6 +9,7 @@ import HhCards from '../page-elements/HhCards/HhCards'
 import Advantages from '../page-elements/Advantages/Advantages'
 import Skills from '../page-elements/Skills/Skills'
 import Сomments from '../page-elements/Сomments/Сomments'
+import SeoText from '../page-elements/SeoText/SeoText'
 import { ETegAppearance } from '@/components/Teg/Teg.props'
 
 
@@ -47,6 +48,8 @@ export const TopPageComponent = ({firstCategory,page,product}:ITopPageComponentP
            
             <Advantages advantages={page.advantages}/>
             <Skills/>
+
+            <SeoText seoText={page.seoText}></SeoText>
         </div>
   )
 }
