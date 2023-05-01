@@ -1,3 +1,30 @@
 .wrapper{
-    display: block;
+    margin-top:40px;
+    display :block; 
 }
+
+.wrapper_advantage{
+    margin: 20px 0px;
+    width: 100%;
+    display:grid;
+    grid-template-columns: auto 1fr ;
+    grid-template-areas: "icon advantage";
+    gap:40px;
+    justify-items: start;
+    align-items: start;
+}
+
+.icon{
+    padding-top: 10px;
+    grid-area: icon;
+    color: var(--green-light);
+    font-size:32px
+}
+
+.advantage{
+    width: 100%;
+    grid-area: advantage;
+    display: grid;
+    gap:20px;
+}
+

@@ -34,6 +34,7 @@ export const TopPageComponent = ({firstCategory,page,product}:ITopPageComponentP
                         />                                 
                           
             )}
+            <Сomments/>
 
             <HhCards count={page.hh.count}
                      juniorSalary ={page.hh.juniorSalary}
@@ -43,8 +44,8 @@ export const TopPageComponent = ({firstCategory,page,product}:ITopPageComponentP
 
 
             />
-            <Сomments/>
-            <Advantages/>
+           
+            <Advantages advantages={page.advantages}/>
             <Skills/>
         </div>
   )
