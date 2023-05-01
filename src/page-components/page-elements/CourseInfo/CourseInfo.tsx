@@ -12,9 +12,9 @@ import classes from './CourseInfo.module.scss'
 import { ICourseInfoProps } from './CourseInfo.props'
 import cn from "classnames"
 
-const CourseInfo = ({productInfo}:ICourseInfoProps) => {
+const CourseInfo = ({advantages, categories, characteristics, description, image, price, title, initialRating}:ICourseInfoProps) => {
 
-  const [rating, setRating] =useState(productInfo.initialRating)
+  const [rating, setRating] =useState(initialRating)
   const [isOpen , setIsOpen] = useState(false)
   const changeIsOpen=() =>{
       setIsOpen(!isOpen)
@@ -25,16 +25,16 @@ const CourseInfo = ({productInfo}:ICourseInfoProps) => {
 
 
       <div onClick={changeIsOpen} className={classes.title}>
-          <img alt={productInfo.title} src={ process.env.NEXT_PUBLIC_DOMAIN+ productInfo.image}/>
+          <img alt={title} src={ process.env.NEXT_PUBLIC_DOMAIN+ image}/>
           <div>
-              <Htag tag={EHtags.MEDIUM}>{productInfo.title}</Htag>
+              <Htag tag={EHtags.MEDIUM}>{title}</Htag>
               <div className={classes.tags}>
-                {productInfo.categories.map(category=>
+                {categories.map(category=>
                     <Teg size={ETegSize.SMALL}>{category}</Teg>
                 )}
               </div>
           </div>
-          <Htag tag={EHtags.MEDIUM} > {productInfo.price}</Htag>
+          <Htag tag={EHtags.MEDIUM} > {price}</Htag>
           <StarGroup rating={rating} setRating={setRating}></StarGroup>
       </div>
 
@@ -42,12 +42,12 @@ const CourseInfo = ({productInfo}:ICourseInfoProps) => {
       <div className={cn( {[classes.info_list] : isOpen,
                            [classes.isClose] : isOpen === false})}>
         <div className={classes.about}>
-          <TextBox>{productInfo.description}</TextBox>
+          <TextBox>{description}</TextBox>
         </div>
 
 
         <div className={classes.character_wrapper}>
-          {productInfo.characteristics.map(characteristic=>
+          {characteristics.map(characteristic=>
             <div className={classes.characteristic}>
               <Htag className={classes.character_items} tag={EHtags.SMALL}>{characteristic.name}</Htag>
               <TextBox className={classes.character_items} >{characteristic.value}</TextBox>
@@ -58,7 +58,7 @@ const CourseInfo = ({productInfo}:ICourseInfoProps) => {
 
         <div className={classes.advantages}>
             <Htag className={classes.character_items} tag={EHtags.SMALL}>Преимущество</Htag>
-            <TextBox size={ETextBoxSize.SMALL} > {productInfo.advantages}</TextBox>
+            <TextBox size={ETextBoxSize.SMALL} > {advantages}</TextBox>
         </div>
 
         

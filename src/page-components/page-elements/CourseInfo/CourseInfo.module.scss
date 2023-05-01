@@ -27,7 +27,7 @@
 }
 
 .info_list{
-    border-top: 2px solid var(--gray-light);
+    border-top: 2px solid var(--background);
     padding-top: 20px;
     display:grid;
     grid-template-columns: 1fr 1fr ;
@@ -68,7 +68,7 @@
 .buttons{
     padding-top: 22px;
     width: 100%;
-    border-top: 2px solid var(--gray-light);
+    border-top: 2px solid var(--background);
     grid-area:buttons;
 }
 .button_space{

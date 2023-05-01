@@ -1,5 +1,12 @@
-import { IProductModel } from "@/interfaces/product.interface";
+import { IProductCharacteristic, IProductModel } from "@/interfaces/product.interface";
 
 export interface ICourseInfoProps {
-    productInfo: IProductModel
+    title: string;
+    image: string;
+    categories:string[]
+    price: number;
+    description: string;
+    characteristics:IProductCharacteristic[];
+    advantages:string;
+    initialRating:number
 }

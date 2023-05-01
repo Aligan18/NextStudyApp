@@ -22,7 +22,7 @@ export interface ITopPageModel {
     createdAt: string
     updatedAt: string
     __v: number
-    hh: HhData
+    hh: IHhData
     qas: any[]
     addresses: any[]
     categoryOn: string
@@ -37,13 +37,13 @@ export interface ITopPageModel {
     _id: string
   }
   
-  export interface HhData {
+  export interface IHhData {
     count: number
     juniorSalary: number
     middleSalary: number
     seniorSalary: number
-    updatedAt: string
-    _id: string
+    updatedAt?: string
+    _id?: string
   }
   
   export interface ITopPageBlog {
