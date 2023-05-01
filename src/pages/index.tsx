@@ -6,8 +6,8 @@ import TextBox from '@/components/TextBox/TextBox'
 import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import classes from './index.module.scss'
 import React, { useState } from 'react'
-import Teg from '@/components/Teg/Teg'
-import { ETegAppearance, ETegSize } from '@/components/Teg/Teg.props'
+import Tag from '@/components/Tag/Tag'
+import { ETagAppearance, ETagSize } from '@/components/Tag/Tag.props'
 import StarIcon from '@/components/StarGroup/StarIcon/StarIcon'
 import StarGroup from '@/components/StarGroup/StarGroup'
 import Layout from '@/layout/Layout'
@@ -33,10 +33,10 @@ const Home = ({menu,firstCategory}:IHomeProps) => {
      <TextBox size={ETextBoxSize.MEDIUM}>Выше указаны программы Adobe InDesign, Adobe Illustrator, Corel Draw и ими можно успешно пользоваться дома или в дороге. Современные ноутбуки хорошо справляются с нагрузкой, так зачем загонять специалиста в душный офис. В этой профессии важным считается вдохновение, поэтому дизайнеры ищут его в разных местах.</TextBox>
     
      <TextBox size={ETextBoxSize.SMALL}>Выше указаны программы Adobe InDesign, Adobe Illustrator, Corel Draw и ими можно успешно пользоваться дома или в дороге. Современные ноутбуки хорошо справляются с нагрузкой, так зачем загонять специалиста в душный офис. В этой профессии важным считается вдохновение, поэтому дизайнеры ищут его в разных местах.</TextBox>
-      <Teg appearance={ETegAppearance.GHOST}>Hello</Teg>
-      <Teg size={ETegSize.SMALL} appearance={ETegAppearance.GREEN}>Hello</Teg>
-      <Teg appearance={ETegAppearance.RED}>Hello</Teg>
-      <Teg href={"https://www.figma.com/file/eHIyKZXUUtMf1BQiuv6tTA/Курс-2---NextJS?node-id=0-1&t=3RAfZ5NVmaCTfVue-0"} size={ETegSize.SMALL} appearance={ETegAppearance.WHITE}> Figma </Teg>
+      <Tag appearance={ETagAppearance.GHOST}>Hello</Tag>
+      <Tag size={ETagSize.SMALL} appearance={ETagAppearance.GREEN}>Hello</Tag>
+      <Tag appearance={ETagAppearance.RED}>Hello</Tag>
+      <Tag href={"https://www.figma.com/file/eHIyKZXUUtMf1BQiuv6tTA/Курс-2---NextJS?node-id=0-1&t=3RAfZ5NVmaCTfVue-0"} size={ETegSize.SMALL} appearance={ETegAppearance.WHITE}> Figma </Tag>
       <StarGroup rating={rating} setRating={setRating}  />
       
     </>

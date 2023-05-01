@@ -1,20 +1,21 @@
 import Htag from '@/components/Htag/Htag'
 import { EHtags } from '@/components/Htag/Htag.props'
-import Teg from '@/components/Teg/Teg'
-import { ETegAppearance } from '@/components/Teg/Teg.props'
+import Tag from '@/components/Tag/Tag'
+import { ETagAppearance } from '@/components/Tag/Tag.props'
 import React from 'react'
 import classes from "./HhCards.module.scss"
 import cn from 'classnames'
 import { IHhCards } from './HhCards.props'
 import TextBox from '@/components/TextBox/TextBox'
+import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 
 const HhCards = ({count,juniorSalary,middleSalary, seniorSalary, title, }:IHhCards) => {
   return (
     <div className={classes.wrapper}>
 
       <div className={classes.title}>
-          <TextBox >Вакансии - {title}</TextBox>
-          <Teg appearance={ETegAppearance.RED}>hh.ru</Teg>
+          <TextBox size={ETextBoxSize.LARGE}>Вакансии - {title}</TextBox>
+          <Tag appearance={ETagAppearance.RED}>hh.ru</Tag>
       </div>
 
 

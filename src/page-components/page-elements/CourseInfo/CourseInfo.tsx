@@ -3,8 +3,8 @@ import { EButtonType } from '@/components/Button/Button.props'
 import Htag from '@/components/Htag/Htag'
 import { EHtags } from '@/components/Htag/Htag.props'
 import StarGroup from '@/components/StarGroup/StarGroup'
-import Teg from '@/components/Teg/Teg'
-import { ETegAppearance, ETegSize } from '@/components/Teg/Teg.props'
+import Teg from '@/components/Tag/Tag'
+import { ETagAppearance, ETagSize } from '@/components/Tag/Tag.props'
 import TextBox from '@/components/TextBox/TextBox'
 import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import React, { useState } from 'react'
@@ -30,7 +30,7 @@ const CourseInfo = ({advantages, categories, characteristics, description, image
               <Htag tag={EHtags.MEDIUM}>{title}</Htag>
               <div className={classes.tags}>
                 {categories.map(category=>
-                    <Teg size={ETegSize.SMALL}>{category}</Teg>
+                    <Teg size={ETagSize.SMALL}>{category}</Teg>
                 )}
               </div>
           </div>

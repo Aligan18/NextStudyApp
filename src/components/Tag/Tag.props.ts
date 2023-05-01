@@ -1,22 +1,22 @@
 import { DetailedHTMLProps, HtmlHTMLAttributes, ReactNode } from "react";
 
-export interface ITeg extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLDivElement>, HTMLDivElement>{
-    appearance?:ETegAppearance,
+export interface ITag extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLDivElement>, HTMLDivElement>{
+    appearance?:ETagAppearance,
     children: ReactNode,
-    size? : ETegSize 
+    size? : ETagSize 
     href?:string
    
 }
 
 
-export  enum ETegAppearance {
+export  enum ETagAppearance {
     GHOST = "ghost",
     RED = "red",
     GREEN = "green",
     WHITE = "white"
 }
 
-export enum ETegSize {
+export enum ETagSize {
     MEDIUM = "medium",
     SMALL = "small",
 }
