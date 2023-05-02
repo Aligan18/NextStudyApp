@@ -36,7 +36,7 @@ const Home = ({menu,firstCategory}:IHomeProps) => {
       <Tag appearance={ETagAppearance.GHOST}>Hello</Tag>
       <Tag size={ETagSize.SMALL} appearance={ETagAppearance.GREEN}>Hello</Tag>
       <Tag appearance={ETagAppearance.RED}>Hello</Tag>
-      <Tag href={"https://www.figma.com/file/eHIyKZXUUtMf1BQiuv6tTA/Курс-2---NextJS?node-id=0-1&t=3RAfZ5NVmaCTfVue-0"} size={ETegSize.SMALL} appearance={ETegAppearance.WHITE}> Figma </Tag>
+      <Tag  size={ETagSize.SMALL} appearance={ETagAppearance.WHITE}> Figma </Tag>
       <StarGroup rating={rating} setRating={setRating}  />
       
     </>

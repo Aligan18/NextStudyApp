@@ -30,7 +30,7 @@ const CourseInfo = ({advantages, categories, characteristics, description, image
               <Htag tag={EHtags.MEDIUM}>{title}</Htag>
               <div className={classes.tags}>
                 {categories.map(category=>
-                    <Teg size={ETagSize.SMALL}>{category}</Teg>
+                    <Teg key={category} size={ETagSize.SMALL}>{category}</Teg>
                 )}
               </div>
           </div>
@@ -48,7 +48,7 @@ const CourseInfo = ({advantages, categories, characteristics, description, image
 
         <div className={classes.character_wrapper}>
           {characteristics.map(characteristic=>
-            <div className={classes.characteristic}>
+            <div key={characteristic.name} className={classes.characteristic}>
               <Htag className={classes.character_items} tag={EHtags.SMALL}>{characteristic.name}</Htag>
               <TextBox className={classes.character_items} >{characteristic.value}</TextBox>
             </div>

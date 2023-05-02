@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ITopPageComponentProps } from './TopPageComponent.props'
 import classes from './TopPageComponent.module.scss'
 import Htag from '@/components/Htag/Htag'
@@ -11,18 +11,51 @@ import Skills from '../page-elements/Skills/Skills'
 import Сomments from '../page-elements/Сomments/Сomments'
 import SeoText from '../page-elements/SeoText/SeoText'
 import { ETagAppearance } from '@/components/Tag/Tag.props'
+import SortButtons from '../page-elements/SortButtons/SortButtons'
+import { ESortButtonType } from '../page-elements/SortButtons/SortButtoms.props'
 
 
 export const TopPageComponent = ({firstCategory,page,product}:ITopPageComponentProps ) => {
+      const [sortedProducts , setSortedProducts] = useState(product)
+      const [selecte, setSelecte ] = useState<ESortButtonType>(ESortButtonType.NONE)
+    
+      useEffect(()=>{ 
+            setSelecte(ESortButtonType.NONE)
+            setSortedProducts(product)
+      },[page.alias])
+
+      useEffect(()=>{
+            switch (selecte) {
+                  case ESortButtonType.RATING:
+                        const rating =sortedProducts.sort((a,b)=>b.initialRating - a.initialRating )
+                        setSortedProducts([...rating])
+                        break;
+                        
+                  case ESortButtonType.PRICE:
+                        const price =sortedProducts.sort((a,b)=>a.price - b.price)
+                        setSortedProducts([...price])
+                        break;
+              }
+      },[selecte])
+
+const sortingProducts =(type:ESortButtonType)=>{
+      console.log("type", type)
+      setSelecte(type)
+     
+      
+      }
+    
+     
+
   return (<div>
             <div className={classes.header_wrapper}>
                   <Htag  tag={EHtags.LARGE}>{page.title}</Htag> 
                   <Teg appearance={ETagAppearance.GHOST}>{product && product.length}</Teg>
-                  <div>Сортировка</div>
+                  <SortButtons selecte={selecte} setSelecte={sortingProducts} />
             </div>
 
 
-            {product && product.map(p=>
+            {sortedProducts && sortedProducts.map(p=>
                         <CourseInfo key={p._id} 
                                     advantages ={p.advantages}
                                     categories={p.categories}
