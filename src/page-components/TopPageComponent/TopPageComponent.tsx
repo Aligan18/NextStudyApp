@@ -13,45 +13,21 @@ import SeoText from '../page-elements/SeoText/SeoText'
 import { ETagAppearance } from '@/components/Tag/Tag.props'
 import SortButtons from '../page-elements/SortButtons/SortButtons'
 import { ESortButtonType } from '../page-elements/SortButtons/SortButtoms.props'
+import { IProductModel } from '@/interfaces/product.interface'
 
 
 export const TopPageComponent = ({firstCategory,page,product}:ITopPageComponentProps ) => {
-      const [sortedProducts , setSortedProducts] = useState(product)
-      const [selecte, setSelecte ] = useState<ESortButtonType>(ESortButtonType.NONE)
-    
-      useEffect(()=>{ 
-            setSelecte(ESortButtonType.NONE)
-            setSortedProducts(product)
-      },[page.alias])
-
-      useEffect(()=>{
-            switch (selecte) {
-                  case ESortButtonType.RATING:
-                        const rating =sortedProducts.sort((a,b)=>b.initialRating - a.initialRating )
-                        setSortedProducts([...rating])
-                        break;
-                        
-                  case ESortButtonType.PRICE:
-                        const price =sortedProducts.sort((a,b)=>a.price - b.price)
-                        setSortedProducts([...price])
-                        break;
-              }
-      },[selecte])
-
-const sortingProducts =(type:ESortButtonType)=>{
-      console.log("type", type)
-      setSelecte(type)
-     
-      
-      }
-    
-     
+      const [sortedProducts , setSortedProducts] = useState<IProductModel[]>(product)
 
   return (<div>
             <div className={classes.header_wrapper}>
                   <Htag  tag={EHtags.LARGE}>{page.title}</Htag> 
                   <Teg appearance={ETagAppearance.GHOST}>{product && product.length}</Teg>
-                  <SortButtons selecte={selecte} setSelecte={sortingProducts} />
+                  <SortButtons sortedProducts={sortedProducts} 
+                               setSortedProducts={setSortedProducts} 
+                               page = {page}
+                               product = {product}
+                               />
             </div>
 
 

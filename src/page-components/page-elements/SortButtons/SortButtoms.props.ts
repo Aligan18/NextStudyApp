@@ -1,3 +1,5 @@
+import { ITopPageModel } from "@/interfaces/page.interface";
+import { IProductModel } from "@/interfaces/product.interface";
 
 
 
@@ -8,7 +10,8 @@ export  enum ESortButtonType {
     NONE="NONE",
 }
 export interface ISortButton {
-    selecte: ESortButtonType;
-    setSelecte: (type:ESortButtonType)=>void
-
+    sortedProducts: IProductModel[];
+    setSortedProducts: (type:IProductModel[])=>void
+    page : ITopPageModel ,
+     product:IProductModel[]
 }
