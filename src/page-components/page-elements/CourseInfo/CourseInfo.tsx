@@ -11,6 +11,7 @@ import React, { useState } from 'react'
 import classes from './CourseInfo.module.scss'
 import { ICourseInfoProps } from './CourseInfo.props'
 import cn from "classnames"
+import Image from 'next/image'
 
 const CourseInfo = ({advantages, categories, characteristics, description, image, price, title, initialRating}:ICourseInfoProps) => {
 
@@ -25,7 +26,7 @@ const CourseInfo = ({advantages, categories, characteristics, description, image
 
 
       <div onClick={changeIsOpen} className={classes.title}>
-          <img alt={title} src={ process.env.NEXT_PUBLIC_DOMAIN+ image}/>
+          <Image width={70} height={70} alt={title} src={ process.env.NEXT_PUBLIC_DOMAIN+ image}/>
           <div>
               <Htag tag={EHtags.MEDIUM}>{title}</Htag>
               <div className={classes.tags}>
