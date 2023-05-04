@@ -3,7 +3,7 @@ import { ETextBoxSize, ITextBoxProps } from './TextBox.props'
 import classes from './TextBox.module.scss'
 import cn from 'classnames'
 
-const TextBox = ({size = ETextBoxSize.MEDIUM, children, className, ...props}:ITextBoxProps) => {
+export const TextBox = ({size = ETextBoxSize.MEDIUM, children, className, ...props}:ITextBoxProps) => {
   return (
     <p className={cn(classes.text , className, {
                      [classes.large ]: size === ETextBoxSize.LARGE ,
@@ -18,4 +18,3 @@ const TextBox = ({size = ETextBoxSize.MEDIUM, children, className, ...props}:ITe
   )
 }
 
-export default TextBox

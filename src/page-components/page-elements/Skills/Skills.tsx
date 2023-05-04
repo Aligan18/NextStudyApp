@@ -1,12 +1,12 @@
-import Htag from '@/components/Htag/Htag'
+
 import { EHtags } from '@/components/Htag/Htag.props'
-import Tag from '@/components/Tag/Tag'
 import { ETagAppearance, ETagSize } from '@/components/Tag/Tag.props'
 import React from 'react'
 import { ISkillProps } from './Skills.props'
 import classes from './Skills.module.scss'
+import { Htag, Tag } from '@/components'
 
-const Skills = ({skills}:ISkillProps) => {
+export  const Skills = ({skills}:ISkillProps) => {
   return (
   <div className={classes.wrapper}>
       <Htag tag={EHtags.MEDIUM}>Получаемые навыки</Htag>
@@ -20,4 +20,3 @@ const Skills = ({skills}:ISkillProps) => {
   </div>)
 }
 
-export default Skills

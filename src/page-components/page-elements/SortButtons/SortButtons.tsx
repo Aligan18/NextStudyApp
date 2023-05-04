@@ -1,11 +1,11 @@
-import Button from '@/components/Button/Button'
-import { EButtonType } from '@/components/Button/Button.props'
-
 import React, { useEffect, useState } from 'react'
+
+import { Button } from '@/components'
+import { EButtonType } from '@/components/Button/Button.props'
 import { ESortButtonType, ISortButton } from './SortButtoms.props'
 
 
-const SortButtons = ({sortedProducts , setSortedProducts , page, product }:ISortButton) => {
+export const SortButtons = ({sortedProducts , setSortedProducts , page, product }:ISortButton) => {
 
   const [selecte, setSelecte ] = useState<ESortButtonType>(ESortButtonType.NONE)
   
@@ -44,4 +44,3 @@ const SortButtons = ({sortedProducts , setSortedProducts , page, product }:ISort
   )
 }
 
-export default SortButtons

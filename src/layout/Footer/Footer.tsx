@@ -2,7 +2,8 @@ import React from 'react'
 import { IFooterProps } from './Footer.props'
 import classes from './Footer.module.scss'
 import cn from 'classnames'
-const Footer = ({className , ...props}:IFooterProps) => {
+
+export const Footer = ({className , ...props}:IFooterProps) => {
   return (
     <footer className={cn(classes.wrapper , className) } {...props}>
       <div className={classes.text}>OwlTop  Все права защищены</div>
@@ -12,4 +13,3 @@ const Footer = ({className , ...props}:IFooterProps) => {
   )
 }
 
-export default Footer

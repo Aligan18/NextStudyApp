@@ -1,12 +1,12 @@
-import Htag from '@/components/Htag/Htag'
-import { EHtags } from '@/components/Htag/Htag.props'
-import TextBox from '@/components/TextBox/TextBox'
-import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import React from 'react'
 import classes from './Advantages.module.scss'
-import { IAdvantagesProps } from './Advantages.props'
 
-const Advantages = ({advantages}:IAdvantagesProps) => {
+import { EHtags } from '@/components/Htag/Htag.props'
+import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
+import { IAdvantagesProps } from './Advantages.props'
+import { Htag, TextBox } from '@/components'
+
+export  const Advantages = ({advantages}:IAdvantagesProps) => {
 
   return (
     <div className={classes.wrapper}>
@@ -25,4 +25,3 @@ const Advantages = ({advantages}:IAdvantagesProps) => {
   )
 }
 
-export default Advantages

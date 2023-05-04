@@ -1,22 +1,17 @@
-import Button from '@/components/Button/Button'
-import { EArrowType, EButtonType } from '@/components/Button/Button.props'
-import Htag from '@/components/Htag/Htag'
-import { EHtags } from '@/components/Htag/Htag.props'
-import TextBox from '@/components/TextBox/TextBox'
-import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
-import classes from './index.module.scss'
 import React, { useState } from 'react'
-import Tag from '@/components/Tag/Tag'
+import axios from 'axios'
+import classes from './index.module.scss'
+
+import { EArrowType, EButtonType } from '@/components/Button/Button.props'
+import { EHtags } from '@/components/Htag/Htag.props'
+import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import { ETagAppearance, ETagSize } from '@/components/Tag/Tag.props'
-import StarIcon from '@/components/StarGroup/StarIcon/StarIcon'
-import StarGroup from '@/components/StarGroup/StarGroup'
-import Layout from '@/layout/Layout'
 import { withLayout } from '@/hoc/withLayout'
 import { GetStaticProps } from 'next'
-import axios from 'axios'
-import { HookCallbacks } from 'async_hooks'
 import { IMenuModel } from '@/interfaces/menu.interface'
 import { ETopLevelCategory } from '@/interfaces/page.interface'
+import { Htag, Button, TextBox, Tag, StarGroup } from '@/components'
+
 
 const Home = ({menu,firstCategory}:IHomeProps) => {
   const [rating, setRating] =useState(3)

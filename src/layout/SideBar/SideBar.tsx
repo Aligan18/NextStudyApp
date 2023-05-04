@@ -1,11 +1,12 @@
-import Menu from '@/components/Menu/Menu'
 import React from 'react'
 import { ISideBarProps } from './SideBar.props'
 import cn from "classnames"
 import classes from './SideBar.module.scss'
-import SearchInput from '@/components/Search/Search'
+import { SearchInput, Menu } from '@/components'
 
-const SideBar = ({className,...props}:ISideBarProps) => {
+
+
+export const SideBar = ({className,...props}:ISideBarProps) => {
   return (
     <div {...props} className={cn(className , classes.wrapper )}>
       <SearchInput  className={classes.search}>Поиск...</SearchInput>
@@ -14,4 +15,3 @@ const SideBar = ({className,...props}:ISideBarProps) => {
   )
 }
 
-export default SideBar

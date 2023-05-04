@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { IStarGroupProps } from './StarGroup.props'
-import StarIcon from './StarIcon/StarIcon'
+import {StarIcon} from '../index'
 import classes from './StarGroup.module.scss'
 
-const StarGroup = ({quantity=5, rating, setRating }:IStarGroupProps) => {
+export const StarGroup = ({quantity=5, rating, setRating }:IStarGroupProps) => {
 
   
 
@@ -38,4 +38,3 @@ const StarGroup = ({quantity=5, rating, setRating }:IStarGroupProps) => {
   )
 }
 
-export default StarGroup

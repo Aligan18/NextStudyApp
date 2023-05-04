@@ -4,7 +4,7 @@ import classes from './Htag.module.scss'
 import cn from 'classnames'
 
 
-const Htag = ({children,tag,className, ...props}:HtegProps) => {
+export const Htag = ({children,tag,className, ...props}:HtegProps) => {
     switch (tag){
         case EHtags.LARGE :
             return <h1 className={cn(classes.large,className)} {...props}>{children}</h1>
@@ -21,4 +21,3 @@ const Htag = ({children,tag,className, ...props}:HtegProps) => {
  
 }
 
-export default Htag

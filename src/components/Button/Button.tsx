@@ -1,11 +1,11 @@
-import classNames from 'classnames'
+
 import React  from 'react'
 import { IButton , EButtonType, EArrowType } from './Button.props'
 import classes from './Button.module.scss'
 import cn from 'classnames'
-import ArrowIcon from "../ArrowIcon/ArrowIcon"
+import {ArrowIcon} from "../index"
 
-const Button = ({children,appearance, arrow= EArrowType.NONE, className, ...props}:IButton) => {
+export const Button = ({children,appearance, arrow= EArrowType.NONE, className, ...props}:IButton) => {
   return (
     <button className={cn(classes.button , className,{
                         [classes.primary]: appearance == EButtonType.PRIMARY,
@@ -21,4 +21,3 @@ const Button = ({children,appearance, arrow= EArrowType.NONE, className, ...prop
   )
 }
 
-export default Button

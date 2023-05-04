@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 import { firstLevelMenu } from '@/helpers/firstLevelMenu'
 
 
-const Menu = () => {
+export const Menu = () => {
   
   const {menu,firstCategory,setMenu} = useMenuContext()
   const router = useRouter()
@@ -104,4 +104,3 @@ const Menu = () => {
   )
 }
 
-export default Menu

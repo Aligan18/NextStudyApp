@@ -1,19 +1,17 @@
-import Button from '@/components/Button/Button'
-import { EButtonType } from '@/components/Button/Button.props'
-import Htag from '@/components/Htag/Htag'
-import { EHtags } from '@/components/Htag/Htag.props'
-import StarGroup from '@/components/StarGroup/StarGroup'
-import Teg from '@/components/Tag/Tag'
-import { ETagAppearance, ETagSize } from '@/components/Tag/Tag.props'
-import TextBox from '@/components/TextBox/TextBox'
-import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import React, { useState } from 'react'
-import classes from './CourseInfo.module.scss'
-import { ICourseInfoProps } from './CourseInfo.props'
-import cn from "classnames"
 import Image from 'next/image'
+import cn from "classnames"
+import classes from './CourseInfo.module.scss'
 
-const CourseInfo = ({advantages, categories, characteristics, description, image, price, title, initialRating}:ICourseInfoProps) => {
+import { EButtonType } from '@/components/Button/Button.props'
+import { EHtags } from '@/components/Htag/Htag.props'
+import { ETagAppearance, ETagSize } from '@/components/Tag/Tag.props'
+import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
+import { ICourseInfoProps } from './CourseInfo.props'
+import { Htag, StarGroup, TextBox, Button, Tag } from '@/components'
+
+
+export  const CourseInfo = ({advantages, categories, characteristics, description, image, price, title, initialRating}:ICourseInfoProps) => {
 
   const [rating, setRating] =useState(initialRating)
   const [isOpen , setIsOpen] = useState(false)
@@ -31,7 +29,7 @@ const CourseInfo = ({advantages, categories, characteristics, description, image
               <Htag tag={EHtags.MEDIUM}>{title}</Htag>
               <div className={classes.tags}>
                 {categories.map(category=>
-                    <Teg key={category} size={ETagSize.SMALL}>{category}</Teg>
+                    <Tag key={category} size={ETagSize.SMALL}>{category}</Tag>
                 )}
               </div>
           </div>
@@ -73,4 +71,3 @@ const CourseInfo = ({advantages, categories, characteristics, description, image
   )
 }
 
-export default CourseInfo

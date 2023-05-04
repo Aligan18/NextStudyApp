@@ -1,12 +1,12 @@
 import React from 'react'
-import Footer from './Footer/Footer'
-import Header from './Header/Header'
-import { ILayoutProps } from './Layout.props'
-import SideBar from './SideBar/SideBar'
+import { Footer, Header, SideBar } from './index'
 import classes from './Layout.module.scss'
 
+import { ILayoutProps } from './Layout.props'
 
-const Layout = ({children}:ILayoutProps) => {
+
+
+export const Layout = ({children}:ILayoutProps) => {
   return (<div className={classes.wrapper} >
                 <Header className={classes.header}/>
                 <SideBar className={classes.sidebar}/>
@@ -16,4 +16,3 @@ const Layout = ({children}:ILayoutProps) => {
   )
 }
 
-export default Layout

@@ -1,15 +1,14 @@
-import Htag from '@/components/Htag/Htag'
-import { EHtags } from '@/components/Htag/Htag.props'
-import Tag from '@/components/Tag/Tag'
-import { ETagAppearance } from '@/components/Tag/Tag.props'
 import React from 'react'
 import classes from "./HhCards.module.scss"
 import cn from 'classnames'
 import { IHhCards } from './HhCards.props'
-import TextBox from '@/components/TextBox/TextBox'
 import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
+import { EHtags } from '@/components/Htag/Htag.props'
+import { ETagAppearance } from '@/components/Tag/Tag.props'
+import { TextBox, Tag, Htag } from '@/components'
 
-const HhCards = ({count,juniorSalary,middleSalary, seniorSalary, title, }:IHhCards) => {
+
+export const HhCards = ({count,juniorSalary,middleSalary, seniorSalary, title, }:IHhCards) => {
   return (
     <div className={classes.wrapper}>
 
@@ -46,4 +45,3 @@ const HhCards = ({count,juniorSalary,middleSalary, seniorSalary, title, }:IHhCar
   )
 }
 
-export default HhCards

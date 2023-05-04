@@ -1,5 +1,6 @@
 import { IMenuContext, MenuContextProvider } from "@/context/menu.context"
-import Layout from "@/layout/Layout"
+import { Layout } from "@/layout"
+
 import { FunctionComponent } from "react"
 
 

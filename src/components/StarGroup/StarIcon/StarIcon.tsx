@@ -3,7 +3,7 @@ import { IStarIconProps } from './StarIcon.props'
 import cn from 'classnames'
 import classes from './StarIcon.module.scss'
 
-const StarIcon = ({filled, ...props  }:IStarIconProps) => {
+export const StarIcon = ({filled, ...props  }:IStarIconProps) => {
   return (<div {...props}> 
     {filled?<i className={cn("fa-solid fa-star", classes.star)}></i>
     :
@@ -13,4 +13,3 @@ const StarIcon = ({filled, ...props  }:IStarIconProps) => {
   )
 }
 
-export default StarIcon

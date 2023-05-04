@@ -4,7 +4,7 @@ import classes from "./Tag.module.scss"
 import cn from 'classnames'
 
 
-const Tag = ({children, appearance = ETagAppearance.WHITE ,className , href,  size = ETagSize.MEDIUM , ...props}:ITag) => {
+export const Tag = ({children, appearance = ETagAppearance.WHITE ,className , href,  size = ETagSize.MEDIUM , ...props}:ITag) => {
   return (
         <div className={cn( classes.teg , className,{
                             [classes.ghost] : appearance === ETagAppearance.GHOST,
@@ -26,4 +26,3 @@ const Tag = ({children, appearance = ETagAppearance.WHITE ,className , href,  si
   )
 }
 
-export default Tag
