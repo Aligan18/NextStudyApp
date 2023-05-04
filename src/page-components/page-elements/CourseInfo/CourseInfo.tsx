@@ -24,17 +24,27 @@ export  const CourseInfo = ({advantages, categories, characteristics, descriptio
 
 
       <div onClick={changeIsOpen} className={classes.title}>
-          <Image width={70} height={70} alt={title} src={ process.env.NEXT_PUBLIC_DOMAIN+ image}/>
-          <div>
-              <Htag tag={EHtags.MEDIUM}>{title}</Htag>
-              <div className={classes.tags}>
-                {categories.map(category=>
-                    <Tag key={category} size={ETagSize.SMALL}>{category}</Tag>
-                )}
+          <Image  width={70} 
+                  height={70} 
+                  alt={title} 
+                  src={ process.env.NEXT_PUBLIC_DOMAIN+ image}
+          />
+          <div className={classes.product_wrapper}>
+              <Htag tag={EHtags.MEDIUM}>
+                    {title}
+              </Htag>
+              <div>
+                  {categories.map(category=>
+                      <Tag key={category} size={ETagSize.SMALL}>{category}</Tag>
+                  )}
               </div>
           </div>
-          <Htag tag={EHtags.MEDIUM} > {price}</Htag>
-          <StarGroup rating={rating} setRating={setRating}></StarGroup>
+          <Htag  tag={EHtags.MEDIUM} > 
+              {price}
+          </Htag>
+          <StarGroup  rating={rating} 
+                      setRating={setRating}
+          />
       </div>
 
 

@@ -25,17 +25,17 @@ export const HhCards = ({count,juniorSalary,middleSalary, seniorSalary, title, }
 
 
       <div className={cn (classes.vacancy, classes.card)}>
-          <div className={classes.vacancy_item }>
+          <div className={cn(classes.vacancy_item, classes.junior) }>
             <TextBox>JUNIOR</TextBox>
             <Htag tag={EHtags.LARGE}>{juniorSalary}</Htag>
           </div>
 
-          <div className={classes.vacancy_item}>
+          <div className={cn(classes.vacancy_item, classes.middle)}>
             <TextBox>MIDDLE</TextBox>
             <Htag tag={EHtags.LARGE}>{middleSalary}</Htag>
           </div>
           
-          <div className={classes.vacancy_item}>
+          <div className={cn(classes.vacancy_item, classes.senior)}>
             <TextBox>SENIOR</TextBox>
             <Htag tag={EHtags.LARGE}>{seniorSalary}</Htag>
           </div>

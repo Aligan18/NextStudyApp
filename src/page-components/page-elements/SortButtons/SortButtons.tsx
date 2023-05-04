@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import classes from './SortButtons.module.scss'
 
 import { Button } from '@/components'
 import { EButtonType } from '@/components/Button/Button.props'
-import { ESortButtonType, ISortButton } from './SortButtoms.props'
+import { ESortButtonType, ISortButton } from './SortButtons.props'
 
 
 export const SortButtons = ({sortedProducts , setSortedProducts , page, product }:ISortButton) => {
@@ -29,7 +30,7 @@ export const SortButtons = ({sortedProducts , setSortedProducts , page, product 
   },[selecte])
 
   return (
-    <div>
+    <div className={classes.wrapper}>
         <Button onClick={()=>setSelecte(ESortButtonType.RATING)} 
                 appearance={selecte === ESortButtonType.RATING ? EButtonType.PRIMARY : EButtonType.GHOST}
                 >

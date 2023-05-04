@@ -18,8 +18,17 @@
     width: 100%;
     grid-area: title;
     display: grid ;
-    grid-template-columns: auto minmax(200px , 600px) 100px auto ;
+    grid-template-columns: auto minmax(200px , 600px)  minmax(75px , 100px) auto;
     gap: 20px;
+
+    @media (width <780px){
+        grid-template-columns: auto 1fr ;
+        
+    }
+}
+.product_wrapper{
+    display:grid;
+    gap:10px
 }
 
 .about{

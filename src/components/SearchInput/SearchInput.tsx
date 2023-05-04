@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { KeyboardEvent, useState } from 'react'
 import classes from './SearchInput.module.scss'
 import cn from 'classnames'
 
@@ -22,15 +22,15 @@ export const SearchInput = ({className, children, ...props}:ISearchProps) => {
     })
   }
 
-  const handleKeyDown =(e:KeyboardEvent)=>{
-     if(e.key === 'Enter'){ goToSearch() }
+  const handleKeyDown =(event:KeyboardEvent)=>{
+     if(event.key === 'Enter'){ goToSearch() }
   }
 
   return (
   <div className={cn(className,classes.wrapper)}>
       <input  value={value} 
               onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setValue(e.target.value)}
-              onKeyDown={(e)=>handleKeyDown(e)}
+              onKeyDown={(event)=>handleKeyDown(event)}
               className={classes.input}   
               placeholder={children} 
               {...props}

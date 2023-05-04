@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { ITopPageComponentProps } from './TopPageComponent.props'
 import classes from './TopPageComponent.module.scss'
+
+import { ITopPageComponentProps } from './TopPageComponent.props'
 import {Htag} from '@/components'
 import { EHtags } from '@/components/Htag/Htag.props'
 import {Tag} from '@/components'
@@ -16,7 +17,9 @@ export const TopPageComponent = ({firstCategory,page,product}:ITopPageComponentP
   return (<div>
             <div className={classes.header_wrapper}>
                   <Htag  tag={EHtags.LARGE}>{page.title}</Htag> 
-                  <Tag appearance={ETagAppearance.GHOST}>{product && product.length}</Tag>
+                  <Tag appearance={ETagAppearance.GHOST}>
+                        {product && product.length}
+                  </Tag>
                   <SortButtons sortedProducts={sortedProducts} 
                                setSortedProducts={setSortedProducts} 
                                page = {page}
