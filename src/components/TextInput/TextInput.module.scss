@@ -1,0 +1,29 @@
+.wrapper {
+    display: block;
+}
+
+.textInput {
+    padding: 7px 12px;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px 1px rgb(14 14 255 / 20%);
+    border: 1px solid var(--gray-light);
+}
+
+.textInput::placeholder{
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.textInput:focus {
+    outline: 1;
+    outline-offset: 1;
+    outline-color: var(--primary);
+}

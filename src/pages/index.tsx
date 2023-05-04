@@ -11,6 +11,7 @@ import { GetStaticProps } from 'next'
 import { IMenuModel } from '@/interfaces/menu.interface'
 import { ETopLevelCategory } from '@/interfaces/page.interface'
 import { Htag, Button, TextBox, Tag, StarGroup } from '@/components'
+import { TextInput } from '@/components/TextInput/TextInput'
 
 
 const Home = ({menu,firstCategory}:IHomeProps) => {
@@ -33,6 +34,7 @@ const Home = ({menu,firstCategory}:IHomeProps) => {
       <Tag appearance={ETagAppearance.RED}>Hello</Tag>
       <Tag  size={ETagSize.SMALL} appearance={ETagAppearance.WHITE}> Figma </Tag>
       <StarGroup rating={rating} setRating={setRating}  />
+      <TextInput>Hello</TextInput>
       
     </>
   )

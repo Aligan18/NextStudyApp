@@ -17,6 +17,12 @@
     box-shadow: 5px 5px 8px 1px rgb(14 14 255 / 20%);
 }
 
+.input:focus {
+    outline: 1;
+    outline-offset: 1;
+    outline-color: var(--primary);
+}
+
 .input::placeholder{
     font-family: var(--font-family);
     font-style: normal;

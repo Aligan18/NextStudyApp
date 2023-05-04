@@ -34,7 +34,7 @@ export const HhCards = ({count,juniorSalary,middleSalary, seniorSalary, title, }
             <TextBox>MIDDLE</TextBox>
             <Htag tag={EHtags.LARGE}>{middleSalary}</Htag>
           </div>
-          
+                    
           <div className={cn(classes.vacancy_item, classes.senior)}>
             <TextBox>SENIOR</TextBox>
             <Htag tag={EHtags.LARGE}>{seniorSalary}</Htag>
