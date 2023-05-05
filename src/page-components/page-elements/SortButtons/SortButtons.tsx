@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import React, { useEffect, useState } from 'react'
 import classes from './SortButtons.module.scss'
 

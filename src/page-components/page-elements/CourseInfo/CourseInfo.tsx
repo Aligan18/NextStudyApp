@@ -5,7 +5,7 @@ import classes from './CourseInfo.module.scss'
 
 import { EButtonType } from '@/components/Button/Button.props'
 import { EHtags } from '@/components/Htag/Htag.props'
-import { ETagAppearance, ETagSize } from '@/components/Tag/Tag.props'
+import { ETagSize } from '@/components/Tag/Tag.props'
 import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import { ICourseInfoProps } from './CourseInfo.props'
 import { Htag, StarGroup, TextBox, Button, Tag } from '@/components'

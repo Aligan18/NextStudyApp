@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import axios from 'axios'
-import classes from './index.module.scss'
 
 import { EArrowType, EButtonType } from '@/components/Button/Button.props'
 import { EHtags } from '@/components/Htag/Htag.props'

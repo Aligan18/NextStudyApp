@@ -1,6 +1,5 @@
 import { useMenuContext } from '@/context/menu.context'
-import { IFirstLevelMenuItem, IMenuModel, IPageItem } from '@/interfaces/menu.interface'
-import { ETopLevelCategory } from '@/interfaces/page.interface'
+import { IFirstLevelMenuItem,  IPageItem } from '@/interfaces/menu.interface'
 import React from 'react'
 import cn from 'classnames'
 import classes from "./Menu.module.scss"

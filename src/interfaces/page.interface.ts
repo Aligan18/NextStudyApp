@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export enum ETopLevelCategory {
     Courses= 0,
     Services =1,

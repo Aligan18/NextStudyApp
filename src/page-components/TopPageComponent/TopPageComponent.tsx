@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import classes from './TopPageComponent.module.scss'
 
 import { ITopPageComponentProps } from './TopPageComponent.props'
@@ -11,7 +11,7 @@ import { SortButtons, CourseInfo, Сomments, HhCards, Advantages, Skills, SeoTex
 
 
 
-export const TopPageComponent = ({firstCategory,page,product}:ITopPageComponentProps ) => {
+export const TopPageComponent = ({page,product}:ITopPageComponentProps ) => {
       const [sortedProducts , setSortedProducts] = useState<IProductModel[]>(product)
 
   return (<div>

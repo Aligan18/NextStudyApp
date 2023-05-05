@@ -1,4 +1,4 @@
-import { IProductCharacteristic, IProductModel } from "@/interfaces/product.interface";
+import { IProductCharacteristic} from "@/interfaces/product.interface";
 
 export interface ICourseInfoProps {
     title: string;

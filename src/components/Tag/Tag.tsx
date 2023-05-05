@@ -15,7 +15,7 @@ export const Tag = ({children, appearance = ETagAppearance.WHITE ,className , hr
                             [classes.small] : size === ETagSize.SMALL,
 
 
-        })}>
+        })} {...props}>
             {href? 
             <a href={href}>{children}</a>
             :

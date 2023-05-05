@@ -11,7 +11,7 @@ import React from 'react'
 
 
 
-const TopPage = ({menu, page , product ,firstCategory}: ITopPageProps) => {
+const TopPage = ({ page , product ,firstCategory}: ITopPageProps) => {
 
   return <TopPageComponent  page={page} 
                             product={product} 
