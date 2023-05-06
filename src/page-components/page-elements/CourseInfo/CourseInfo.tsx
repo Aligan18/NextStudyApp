@@ -11,19 +11,28 @@ import { ICourseInfoProps } from './CourseInfo.props'
 import { Htag, StarGroup, TextBox, Button, Tag } from '@/components'
 
 
-export  const CourseInfo = ({advantages, categories, characteristics, description, image, price, title, initialRating}:ICourseInfoProps) => {
+export  const CourseInfo = ({isOpen,setIsOpen,
+                              advantages, 
+                              categories, 
+                              characteristics, 
+                              description, 
+                              image, 
+                              price, 
+                              title, 
+                              initialRating,
+                              isOpenComments,
+                              setIsOpenComments,
+                            }:ICourseInfoProps) => {
 
   const [rating, setRating] =useState(initialRating)
-  const [isOpen , setIsOpen] = useState(false)
-  const changeIsOpen=() =>{
-      setIsOpen(!isOpen)
-  }
+  
+  
 
   return (
     <div className={classes.wrapper}>
 
 
-      <div onClick={changeIsOpen} className={classes.title}>
+      <div onClick={()=>setIsOpen(!isOpen)} className={classes.title}>
           <Image  width={70} 
                   height={70} 
                   alt={title} 
@@ -73,7 +82,11 @@ export  const CourseInfo = ({advantages, categories, characteristics, descriptio
         
         <div className={classes.buttons}>
           <Button className={classes.button_space} appearance={EButtonType.PRIMARY}>Узнать подробнее</Button>
-          <Button className={classes.button_space} appearance={EButtonType.GHOST}>Читать отзывы</Button>
+          {isOpenComments !== undefined &&setIsOpenComments &&
+             <Button onClick={()=>setIsOpenComments(!isOpenComments)} className={classes.button_space} appearance={EButtonType.GHOST}>
+                Читать отзывы
+              </Button>
+          }
         </div>
       </div>
 

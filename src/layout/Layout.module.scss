@@ -42,4 +42,8 @@
 .body {
     padding: 25px;
     grid-area : body;
+
+    @media (width < 400px) {
+        padding: 0px;
+    }
 }

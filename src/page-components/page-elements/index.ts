@@ -1,4 +1,4 @@
-export * from './Сomments/Сomments'
+export * from './Сomments/Comments'
 export * from './Advantages/Advantages'
 export * from './CourseInfo/CourseInfo'
 export * from './HhCards/HhCards'

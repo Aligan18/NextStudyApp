@@ -1,10 +1,10 @@
-import React, { KeyboardEvent, useState } from 'react'
+import React, { useState } from 'react'
 import classes from './SearchInput.module.scss'
 import cn from 'classnames'
 
 import { ISearchProps } from './SearchInput.props'
 import { EButtonType } from '../Button/Button.props'
-import { Button } from '../index'
+import { Button ,InputElement } from '../index'
 import { useRouter } from 'next/router'
 
 export const SearchInput = ({className, children, ...props}:ISearchProps) => {
@@ -22,19 +22,13 @@ export const SearchInput = ({className, children, ...props}:ISearchProps) => {
     })
   }
 
-  const handleKeyDown =(event:KeyboardEvent)=>{
+  const handleKeyDown =(event:React.KeyboardEvent<HTMLInputElement>)=>{
      if(event.key === 'Enter'){ goToSearch() }
   }
 
   return (
-  <div className={cn(className,classes.wrapper)}>
-      <input  value={value} 
-              onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setValue(e.target.value)}
-              onKeyDown={(event)=>handleKeyDown(event)}
-              className={classes.input}   
-              placeholder={children} 
-              {...props}
-      />
+  <div className={cn(className,classes.wrapper)} {...props}>
+    <InputElement handleKeyDown={handleKeyDown} value={value} setValue={setValue} >{children}</InputElement>
 
       <Button   onClick={goToSearch}
                 className={classes.button} 

@@ -8,7 +8,7 @@ import {Tag} from '@/components'
 import { ETagAppearance } from '@/components/Tag/Tag.props'
 import { IProductModel } from '@/interfaces/product.interface'
 import { SortButtons, CourseInfo, Сomments, HhCards, Advantages, Skills, SeoText } from '../page-elements'
-
+import {CourseInfoAndComments} from  '../../widget/index'
 
 
 export const TopPageComponent = ({page,product}:ITopPageComponentProps ) => {
@@ -28,20 +28,10 @@ export const TopPageComponent = ({page,product}:ITopPageComponentProps ) => {
             </div>
 
 
-            {sortedProducts && sortedProducts.map(p=>
-                        <CourseInfo key={p._id} 
-                                    advantages ={p.advantages}
-                                    categories={p.categories}
-                                    characteristics={p.characteristics}
-                                    description={p.description}
-                                    image={p.image}
-                                    initialRating={p.initialRating}
-                                    price ={p.price}
-                                    title= {p.title}                                        
-                        />                                 
-                          
+            {sortedProducts && sortedProducts.map(product=>
+                        <CourseInfoAndComments product={product} key={product._id} />
             )}
-            <Сomments/>
+      
 
             <HhCards count={page.hh.count}
                      juniorSalary ={page.hh.juniorSalary}
