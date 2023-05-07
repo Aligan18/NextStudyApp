@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import { IStarGroupProps } from './StarGroup.props'
 import {StarIcon} from '../index'
 import classes from './StarGroup.module.scss'
 
-export const StarGroup = ({quantity=5, rating, setRating }:IStarGroupProps) => {
+export const StarGroup = forwardRef(({quantity=5, rating, setRating }:IStarGroupProps, ref:ForwardedRef<HTMLDivElement>) => {
 
   
 
@@ -16,7 +16,8 @@ export const StarGroup = ({quantity=5, rating, setRating }:IStarGroupProps) => {
   const changeRating =(currentRating:number)=>{
      const updatedRating = totalStars.map((star,index)=>{
         return (<StarIcon 
-                onMouseLeave={()=>changeRating(rating)} 
+                  ref={ref}
+                  onMouseLeave={()=>changeRating(rating)} 
                   onMouseEnter={()=>changeRating(index+1)} 
                   onClick={()=>setRating(index+1)} 
                   key={index} 
@@ -36,5 +37,5 @@ export const StarGroup = ({quantity=5, rating, setRating }:IStarGroupProps) => {
 
   </div>
   )
-}
+})
 
