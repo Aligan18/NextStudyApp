@@ -12,7 +12,7 @@ export const Сomments = () => {
         <Htag tag={EHtags.SMALL} className={classes.name}> Ganiyev Alisher </Htag>
         <div className={classes.date}>10 марта 2021</div>
         <div className={classes.rating}>
-          <StarGroup   rating={4} setRating={()=>{}}  />
+          <StarGroup  changeable={false} rating={4}   />
         </div>
        
       </div>

@@ -24,7 +24,7 @@ export  const CourseInfo = ({isOpen,setIsOpen,
                               setIsOpenComments,
                             }:ICourseInfoProps) => {
 
-  const [rating, setRating] =useState(initialRating)
+ 
   
   
 
@@ -51,8 +51,8 @@ export  const CourseInfo = ({isOpen,setIsOpen,
           <Htag  tag={EHtags.MEDIUM} > 
               {price}
           </Htag>
-          <StarGroup  rating={rating} 
-                      setRating={setRating}
+          <StarGroup  changeable={false}
+                      rating={initialRating} 
           />
       </div>
 

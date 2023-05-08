@@ -33,8 +33,8 @@ const Home = ({menu,firstCategory}:IHomeProps) => {
       <Tag size={ETagSize.SMALL} appearance={ETagAppearance.GREEN}>Hello</Tag>
       <Tag appearance={ETagAppearance.RED}>Hello</Tag>
       <Tag  size={ETagSize.SMALL} appearance={ETagAppearance.WHITE}> Figma </Tag>
-      <StarGroup rating={rating} setRating={setRating}  />
-      <TextInput>Hello</TextInput>
+      <StarGroup changeable={true} rating={rating} setRating={setRating}  />
+      <div><TextInput>Hello</TextInput></div>
       
     </>
   )

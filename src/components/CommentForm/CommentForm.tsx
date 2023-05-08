@@ -39,7 +39,7 @@ export const CommentForm = () => {
         <Controller name='rating'
                     control={control} 
                     render ={({field }) =>
-                    (<StarGroup ref={field.ref} rating={field.value} setRating={field.onChange} />)}
+                    (<StarGroup changeable={true} ref={field.ref} rating={field.value} setRating={field.onChange} />)}
          />
       </div>
 
