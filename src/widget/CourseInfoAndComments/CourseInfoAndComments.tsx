@@ -23,6 +23,6 @@ export const CourseInfoAndComments = ({product}:ICourseInfoAndCommentsProps) => 
                     price ={product.price}
                     title= {product.title}                                        
         />            
-       {isOpenCourse && isOpenComments && <Сomments/>     }                
+       {isOpenCourse && isOpenComments && <Сomments productId={product._id}/>     }                
     </>
 )}

@@ -3,13 +3,14 @@ import { EHtags } from '@/components/Htag/Htag.props'
 import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import React from 'react'
 import classes from "./Сomments.module.scss"
+import { IComments } from './Сomments.props'
 
-export const Сomments = () => {
+export const Сomments = ({productId}:IComments) => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.wrapper_header}>
         <div className={classes.avatar}><i className="fa-solid fa-user-tie"></i></div>
-        <Htag tag={EHtags.SMALL} className={classes.name}> Ganiyev Alisher </Htag>
+        <Htag tag={EHtags.SMALL} className={classes.name}> Ivan Petrov </Htag>
         <div className={classes.date}>10 марта 2021</div>
         <div className={classes.rating}>
           <StarGroup  changeable={false} rating={4}   />
@@ -27,7 +28,7 @@ export const Сomments = () => {
       </TextBox>
       <hr className={classes.hr}/>
 
-      <CommentForm></CommentForm>
+      <CommentForm productId ={productId}/>
 
     </div>
   )

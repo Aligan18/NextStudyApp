@@ -28,6 +28,9 @@
 
 .button{
     grid-area: button;
+    display: flex;
+    gap:30px;
+    align-items: center;
 }
 .name {
     grid-area: name;

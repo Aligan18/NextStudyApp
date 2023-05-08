@@ -1,3 +1,4 @@
+import { API } from '@/helpers/api'
 import { firstLevelMenu } from '@/helpers/firstLevelMenu'
 import { withLayout } from '@/hoc/withLayout'
 import { IMenuModel } from '@/interfaces/menu.interface'
@@ -55,12 +56,12 @@ export const getStaticProps : GetStaticProps<ITopPageProps> = async({params}:Get
 
     try {
     
-    const { data: menu } = await axios.post<IMenuModel[]>(process.env.NEXT_PUBLIC_DOMAIN+'/api/top-page/find',{firstCategory : firstCategory.id })
-    const {data : page } = await axios.get<ITopPageModel>(process.env.NEXT_PUBLIC_DOMAIN+'/api/top-page/byAlias/'+ params.alias)  
-    const {data: product} = await axios.post<IProductModel[]>(process.env.NEXT_PUBLIC_DOMAIN+"/api/product/find",  {
-                            "category": page.category,
-                            "limit" : 10 
-                            })
+    const { data: menu } = await axios.post<IMenuModel[]>(API.topPage.find,{firstCategory : firstCategory.id })
+    const {data : page } = await axios.get<ITopPageModel>(API.topPage.byAlias+ params.alias)  
+    const {data: product} = await axios.post<IProductModel[]>(API.page.find,  {
+                                                                "category": page.category,
+                                                                "limit" : 10 
+                                                                })
 
     return {
             props:{

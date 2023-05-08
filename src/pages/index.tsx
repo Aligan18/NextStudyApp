@@ -12,6 +12,7 @@ import { IMenuModel } from '@/interfaces/menu.interface'
 import { ETopLevelCategory } from '@/interfaces/page.interface'
 import { Htag, Button, TextBox, Tag, StarGroup } from '@/components'
 import { TextInput } from '@/components/TextInput/TextInput'
+import { API } from '@/helpers/api'
 
 
 const Home = ({menu,firstCategory}:IHomeProps) => {
@@ -42,7 +43,7 @@ const Home = ({menu,firstCategory}:IHomeProps) => {
 
 export const getStaticProps : GetStaticProps<IHomeProps> = async () =>{
   const   firstCategory = ETopLevelCategory.Courses
-  const { data:menu } = await axios.post<IMenuModel[]>(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",{firstCategory})
+  const { data:menu } = await axios.post<IMenuModel[]>(API.topPage.find,{firstCategory})
 
   return {
        

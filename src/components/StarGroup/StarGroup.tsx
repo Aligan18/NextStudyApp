@@ -3,7 +3,7 @@ import { IStarGroupProps } from './StarGroup.props'
 import {StarIcon} from '../index'
 import classes from './StarGroup.module.scss'
 
-export const StarGroup = forwardRef(({quantity=5, rating, setRating, changeable }:IStarGroupProps, ref:ForwardedRef<HTMLDivElement>) => {
+export const StarGroup = forwardRef(({quantity=5, rating, setRating, changeable , error}:IStarGroupProps, ref:ForwardedRef<HTMLDivElement>) => {
 
   
 
@@ -45,9 +45,12 @@ export const StarGroup = forwardRef(({quantity=5, rating, setRating, changeable 
  
  
   
-  return (<div className={classes.wrapper}>
-     
-       {totalStars.map((star, index:number) => <span key={index}>{star}</span> )}
+  return (
+  <div className={classes.wrapper}>
+        <div className={classes.stars}>
+          {totalStars.map((star, index:number) => <span key={index}>{star}</span> )}
+       </div>
+       {error && <span className={classes.error}>{error.message}</span>}
 
   </div>
   )

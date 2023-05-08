@@ -1,4 +1,15 @@
 .wrapper {
-    display: flex;
+    display: grid;
+    gap: 5px;
     font-size: large;
+    justify-content: end;
+}
+
+.stars{
+    display: flex
+}
+
+.error {
+    color:var(--red);
+    font-size:13px
 }

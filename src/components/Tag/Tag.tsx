@@ -13,6 +13,7 @@ export const Tag = ({children, appearance = ETagAppearance.WHITE ,className , hr
                             [classes.white] : appearance === ETagAppearance.WHITE,
                             [classes.medium] : size === ETagSize.MEDIUM,
                             [classes.small] : size === ETagSize.SMALL,
+                            [classes.large] : size === ETagSize.LARGE,
 
 
         })} {...props}>

@@ -19,5 +19,6 @@ export  enum ETagAppearance {
 export enum ETagSize {
     MEDIUM = "medium",
     SMALL = "small",
+    LARGE = "large",
 }
 

@@ -7,7 +7,7 @@ import { EHtags } from '@/components/Htag/Htag.props'
 import {Tag} from '@/components'
 import { ETagAppearance } from '@/components/Tag/Tag.props'
 import { IProductModel } from '@/interfaces/product.interface'
-import { SortButtons, CourseInfo, Сomments, HhCards, Advantages, Skills, SeoText } from '../page-elements'
+import { SortButtons,  HhCards, Advantages, Skills, SeoText } from '../page-elements'
 import {CourseInfoAndComments} from  '../../widget/index'
 
 

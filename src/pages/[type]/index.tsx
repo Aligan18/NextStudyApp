@@ -7,6 +7,7 @@ import { IMenuModel } from '@/interfaces/menu.interface'
 import { ETopLevelCategory } from '@/interfaces/page.interface'
 import { firstLevelMenu } from '@/helpers/firstLevelMenu'
 import { ParsedUrlQuery } from 'querystring'
+import { API } from '@/helpers/api'
 
 const TypeIndex = ({firstCategory}:ITypeProps) => {
  
@@ -38,7 +39,7 @@ export const getStaticProps : GetStaticProps<ITypeProps> = async ({params}:GetSt
     }
 
     try {
-        const { data:menu } = await axios.post<IMenuModel[]>(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",{firstCategory: firstCategory.id})
+        const { data:menu } = await axios.post<IMenuModel[]>(API.topPage.find,{firstCategory: firstCategory.id})
         return {
        
             props: {
