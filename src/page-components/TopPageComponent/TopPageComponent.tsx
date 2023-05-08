@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import classes from './TopPageComponent.module.scss'
 
 import { ITopPageComponentProps } from './TopPageComponent.props'
@@ -13,10 +13,17 @@ import {CourseInfoAndComments} from  '../../widget/index'
 
 export const TopPageComponent = ({page,product}:ITopPageComponentProps ) => {
       const [sortedProducts , setSortedProducts] = useState<IProductModel[]>(product)
+      const titleRef = useRef<HTMLDivElement>(null)
+      const goToHhCards=()=>{
+            titleRef.current?.scrollIntoView({
+                  behavior:'smooth',
+                  block:'start'
+            })
+      }
 
   return (<div>
             <div className={classes.header_wrapper}>
-                  <Htag  tag={EHtags.LARGE}>{page.title}</Htag> 
+                  <Htag className={classes.title } onClick={goToHhCards}  tag={EHtags.LARGE}>{page.title}</Htag> 
                   <Tag appearance={ETagAppearance.GHOST}>
                         {product && product.length}
                   </Tag>
@@ -33,7 +40,8 @@ export const TopPageComponent = ({page,product}:ITopPageComponentProps ) => {
             )}
       
 
-            <HhCards count={page.hh.count}
+            <HhCards ref={titleRef}
+                     count={page.hh.count}
                      juniorSalary ={page.hh.juniorSalary}
                      middleSalary={page.hh.middleSalary }
                      seniorSalary={page.hh.seniorSalary}
