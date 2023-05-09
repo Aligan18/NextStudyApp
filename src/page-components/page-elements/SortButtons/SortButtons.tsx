@@ -7,14 +7,14 @@ import { EButtonType } from '@/components/Button/Button.props'
 import { ESortButtonType, ISortButton } from './SortButtons.props'
 
 
-export const SortButtons = ({sortedProducts , setSortedProducts , page, product }:ISortButton) => {
+export const SortButtons = ({sortedProducts , setSortedProducts ,  product }:ISortButton) => {
 
   const [selecte, setSelecte ] = useState<ESortButtonType>(ESortButtonType.NONE)
   
   useEffect(()=>{ 
     setSelecte(ESortButtonType.NONE)
     setSortedProducts(product)
-  },[page.alias])
+  },[product])
 
   useEffect(()=>{
       switch (selecte) {

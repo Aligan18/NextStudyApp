@@ -29,7 +29,6 @@ export const TopPageComponent = ({page,product}:ITopPageComponentProps ) => {
                   </Tag>
                   <SortButtons sortedProducts={sortedProducts} 
                                setSortedProducts={setSortedProducts} 
-                               page = {page}
                                product = {product}
                                />
             </div>
