@@ -1,4 +1,5 @@
 import { useMenuContext } from '@/context/menu.context'
+import {motion} from 'framer-motion'
 import { IFirstLevelMenuItem,  IPageItem } from '@/interfaces/menu.interface'
 import React from 'react'
 import cn from 'classnames'
@@ -6,9 +7,12 @@ import classes from "./Menu.module.scss"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { firstLevelMenu } from '@/helpers/firstLevelMenu'
+import { VarSecondMenu, VarThridMenu } from './Menu.animate'
 
 
 export const Menu = () => {
+
+  
   
   const {menu,firstCategory,setMenu} = useMenuContext()
   const router = useRouter()
@@ -26,9 +30,6 @@ export const Menu = () => {
   }
 
   const renderFirstList =()=>{
-
-
-
     return <>
                   {firstLevelMenu.map(menuItem=>
                       <div key={menuItem.id}>
@@ -46,12 +47,10 @@ export const Menu = () => {
                       </div>
                   )}
           </>
-
   }
+
+
   const renderSecondList =(menuItem:IFirstLevelMenuItem)=>{
-
-    
-
     return(
           <div>
               {menu.map((m)=>{
@@ -66,11 +65,14 @@ export const Menu = () => {
                               onClick={()=>changeIsOpened(m._id.secondCategory)}> 
                                      {m._id.secondCategory}
                         </div>
-                        <div className={cn(classes.second_category_block ,classes.left_border , {
-                              [classes.second_category_block_opened] : m.isOpened 
-                        })}>
+
+                        <motion.div variants={VarSecondMenu}
+                                    initial={m.isOpened?'visible':'hidden'}
+                                    animate={m.isOpened?'visible':'hidden'}
+                                    className={cn(classes.second_category_block ,classes.left_border )
+                        }>
                             {  renderThirdList(m.pages, menuItem.route)}
-                        </div>
+                        </motion.div>
                     </div>
               )})}
           </div>
@@ -79,22 +81,25 @@ export const Menu = () => {
         
   }
 
+
   const renderThirdList =(pages :IPageItem[],route:string)=>{
     return <div className={classes.thrid_category_hover}>
-              {pages.map((p)=><Link key={p._id} href={`/${route}/${p.alias}`}>
-                                  <div  className={cn(classes.thrid_category,{
-                                                      [classes.thrid_category_active]: router.asPath === `/${route}/${p.alias}`
-                                                })}
-                                    >
-                                        {p.title}
-                                </div>
-                              </Link>
+              {pages.map((p)=>
+                
+                  <Link key={p._id} href={`/${route}/${p.alias}`}>
+                      <motion.div  variants={VarThridMenu}
+                                  className={cn(classes.thrid_category,{
+                                                [classes.thrid_category_active]: router.asPath === `/${route}/${p.alias}`
+                                              })}
+                      >
+                          {p.title}
+                      </motion.div>
+                  </Link>
+                
               )}
           </div>
   }
 
-
-  
 
   return (
     <div>

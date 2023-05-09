@@ -1,14 +1,15 @@
 import { CourseInfo, Сomments } from '@/page-components/page-elements'
-import React, { useState } from 'react'
+import React, { forwardRef,ForwardedRef, useState } from 'react'
 import { ICourseInfoAndCommentsProps } from './CourseInfoAndComments.props'
+import { motion } from 'framer-motion'
 
 
-export const CourseInfoAndComments = ({product}:ICourseInfoAndCommentsProps) => {
+export const CourseInfoAndComments = motion(forwardRef(({product}:ICourseInfoAndCommentsProps, ref:ForwardedRef<HTMLDivElement>) => {
     const [isOpenCourse , setIsOpenCourse] = useState(false)
     const [isOpenComments , setIsOpenComments] = useState(false)
   return (
    
-    <>
+    <div ref={ref}>
         <CourseInfo isOpenComments= {isOpenComments}
                     setIsOpenComments={setIsOpenComments}
                     isOpen={isOpenCourse}
@@ -24,5 +25,5 @@ export const CourseInfoAndComments = ({product}:ICourseInfoAndCommentsProps) => 
                     title= {product.title}                                        
         />            
        {isOpenCourse && isOpenComments && <Сomments productId={product._id}/>     }                
-    </>
-)}
+    </div>
+)}))

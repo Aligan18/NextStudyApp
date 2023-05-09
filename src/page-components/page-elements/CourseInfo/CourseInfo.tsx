@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import cn from "classnames"
 import classes from './CourseInfo.module.scss'
+import { motion } from 'framer-motion'
+
 
 import { EButtonType } from '@/components/Button/Button.props'
 import { EHtags } from '@/components/Htag/Htag.props'
@@ -9,6 +11,7 @@ import { ETagSize } from '@/components/Tag/Tag.props'
 import { ETextBoxSize } from '@/components/TextBox/TextBox.props'
 import { ICourseInfoProps } from './CourseInfo.props'
 import { Htag, StarGroup, TextBox, Button, Tag } from '@/components'
+import { VarAboutInfo } from './CoutseInfo.animate'
 
 
 export  const CourseInfo = ({isOpen,setIsOpen,
@@ -57,8 +60,10 @@ export  const CourseInfo = ({isOpen,setIsOpen,
       </div>
 
 
-      <div className={cn( {[classes.info_list] : isOpen,
-                           [classes.isClose] : isOpen === false})}>
+      <motion.div  variants={VarAboutInfo}
+                   initial={isOpen?'visible':'hidden'}
+                   animate={isOpen?'visible':'hidden'}
+                   className={cn( classes.info_list)}>
         <div className={classes.about}>
           <TextBox>{description}</TextBox>
         </div>
@@ -88,7 +93,7 @@ export  const CourseInfo = ({isOpen,setIsOpen,
               </Button>
           }
         </div>
-      </div>
+      </motion.div>
 
     </div>
   )

@@ -17,7 +17,9 @@ export const TopPageComponent = ({page,product}:ITopPageComponentProps ) => {
       const goToHhCards=()=>{
             titleRef.current?.scrollIntoView({
                   behavior:'smooth',
-                  block:'start'
+                  block:'start',
+                  
+
             })
       }
 
@@ -35,7 +37,7 @@ export const TopPageComponent = ({page,product}:ITopPageComponentProps ) => {
 
 
             {sortedProducts && sortedProducts.map(product=>
-                        <CourseInfoAndComments product={product} key={product._id} />
+                        <CourseInfoAndComments layout transition={{duration :0.5}} product={product} key={product._id} />
             )}
       
 
