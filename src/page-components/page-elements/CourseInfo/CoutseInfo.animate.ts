@@ -2,9 +2,10 @@
 
 export const VarAboutInfo ={
     visible:{
-        height : '100%',
+        height : "auto",
         opacity:1,
         marginTop: 30,
+        paddingBottom:30,
         transition: { 
             duration: 0.8 ,
             when:"beforeChildren"
@@ -14,6 +15,7 @@ export const VarAboutInfo ={
     hidden:{
         height :'0px',
         opacity:0,
-        marginTop: 0
+        marginTop: 0,
+        paddingBottom:0,
     }
 }

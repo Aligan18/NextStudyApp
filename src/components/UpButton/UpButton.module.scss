@@ -1,19 +1,11 @@
 
-.button {
-    height: 40px;
-    width: 40px;
+
+.wrapper {
+    display: block;
+}
+
+.buttonUp {
     position: fixed;
     bottom: 50px;
     right: 50px;
-    background-color: var(--primary);
-    border-radius:10px;
-    border: 2px solid var(--white);
-    cursor: pointer;
-    font-size: 20px;
-    color: var(--white);
 }
-
-.button:hover{
-    scale: 1.2;
-}
-

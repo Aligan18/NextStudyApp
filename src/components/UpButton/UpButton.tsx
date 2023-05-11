@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import classes from './UpButton.module.scss'
 import {motion,  useAnimation} from 'framer-motion'
 import { useGetYCoordinate } from '@/hooks/useGetCoordinate'
+import { ButtonIcon } from '../ButtonIcon/ButtonIcon'
 
 export const UpButton = () => {
 
@@ -21,8 +22,11 @@ export const UpButton = () => {
     }
 
   return (
-    <motion.button animate={controls}  initial={{opacity:0}} onClick={handleClick} className={classes.button}>
-        <i className="fa-solid fa-chevron-up"></i>
-    </motion.button>
+    <motion.div animate={controls}  initial={{opacity:0}} >
+        <ButtonIcon onClick={handleClick}  
+                    className={classes.buttonUp} 
+                    appearance={'primary'} 
+                    icon={'arrow'}   />
+    </motion.div>
   )
 }

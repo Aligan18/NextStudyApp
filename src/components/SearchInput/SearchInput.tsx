@@ -4,8 +4,9 @@ import cn from 'classnames'
 
 import { ISearchProps } from './SearchInput.props'
 import { EButtonType } from '../Button/Button.props'
-import { Button ,InputElement } from '../index'
+import { InputElement } from '../index'
 import { useRouter } from 'next/router'
+import { ButtonIcon } from '../ButtonIcon/ButtonIcon'
 
 export const SearchInput = ({className, children, ...props}:ISearchProps) => {
   const route = useRouter()
@@ -30,12 +31,12 @@ export const SearchInput = ({className, children, ...props}:ISearchProps) => {
   <div className={cn(className,classes.wrapper)} {...props}>
     <InputElement handleKeyDown={handleKeyDown} value={value} setValue={setValue} >{children}</InputElement>
 
-      <Button   onClick={goToSearch}
-                className={classes.button} 
-                appearance={EButtonType.PRIMARY}
-        > 
-          <i className="fa-solid fa-magnifying-glass"></i>
-      </Button>
+      <ButtonIcon icon='search'
+                  onClick={goToSearch}
+                  className={classes.button} 
+                  appearance={EButtonType.PRIMARY}
+      /> 
+      
    </div>
   )
 }
