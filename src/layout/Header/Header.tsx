@@ -29,7 +29,7 @@ export const Header = ({className,...props}:IHomeProps) => {
       {menuOpen &&
         <motion.div variants={VarMobileMenu}
                     initial={"hidden"}
-                    animate ={"visible"}
+                    animate ={menuOpen?"visible" :"hidden"}
                     className={classes.mobile_sidebar}>
           <SideBar  />
           <ButtonIcon className={classes.close_button} 
