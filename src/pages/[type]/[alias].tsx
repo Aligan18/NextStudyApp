@@ -19,13 +19,9 @@ const TopPage = ({ page , product ,firstCategory}: ITopPageProps) => {
         <Head>
             <title>{page.metaTitle}</title>
             <meta name="description" content={page.metaDescription}/>
-            <meta property="og:locale" content="ru_RU" />
             <meta property="og:title" content={page.metaTitle} />
             <meta property="og:description" content={page.metaDescription} />
             <meta property="og:type" content="article" />
-            <meta property="og:locale" content="ru_RU" />
-            <meta property="og:url" content={`${API.courses}/${page.alias}`} />
-
         </Head>
             <TopPageComponent  page={page} 
                                 product={product} 
