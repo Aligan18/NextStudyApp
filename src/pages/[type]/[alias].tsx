@@ -16,20 +16,21 @@ import React from 'react'
 const TopPage = ({ page , product ,firstCategory}: ITopPageProps) => {
 
   return<> 
-        <Head>
-            <title>{page.metaTitle}</title>
-            <meta name="description" content={page.metaDescription}/>
-            <meta property="og:title" content={page.metaTitle} />
-            <meta property="og:description" content={page.metaDescription} />
-            <meta property="og:type" content="article" />
-        </Head>
-            <TopPageComponent  page={page} 
-                                product={product} 
-                                firstCategory={firstCategory}
-            />
-        
+            {(page && product) &&<>
+                <Head>
+                    <title>{page.metaTitle}</title>
+                    <meta name="description" content={page.metaDescription}/>
+                    <meta property="og:title" content={page.metaTitle} />
+                    <meta property="og:description" content={page.metaDescription} />
+                    <meta property="og:type" content="article" />
+                </Head>
+                <TopPageComponent  page={page} 
+                                    product={product} 
+                                    firstCategory={firstCategory}
+                />
+            </> 
+            }
         </>
-
 }
 
 export default  withLayout(TopPage)
