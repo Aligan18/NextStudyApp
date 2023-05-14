@@ -12,7 +12,7 @@ module.exports = {
       },
     ],
   },
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.plugins.push(new StylelintPlugin());
     return config;
   },

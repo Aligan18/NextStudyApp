@@ -13,15 +13,15 @@ export default function App({ Component, pageProps, router }: AppProps) {
               <meta property="og:url" content={API.courses + router.asPath} />
               <meta property="og:locale" content="ru_RU" />
             </Head>
-            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-X94SRK3XQ1"></Script>
+            <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ACCOUNT}`}></Script>
             <Script id="google-analytics" strategy="afterInteractive">
               {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-            
-              gtag('config', 'G-X94SRK3XQ1');
-            `}
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                
+                  gtag('config', ${process.env.GA_ACCOUNT});
+              `}
             </Script>
             <Component {...pageProps} />
 </>
