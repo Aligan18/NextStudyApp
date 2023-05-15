@@ -16,7 +16,7 @@ export  const SearchList = ({ description, title, alias  }:ISearchListProps) => 
       <div onClick={()=>{router.push("/courses/"+ alias)}} className={classes.title}>
          
           <div className={classes.product_wrapper}>
-              <Htag tag={EHtags.MEDIUM}>
+              <Htag className={classes.primary} tag={EHtags.MEDIUM}>
                     {title}
               </Htag>   
           </div>

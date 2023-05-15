@@ -7,6 +7,8 @@ import { IMenuModel } from '@/interfaces/menu.interface'
 import { ETopLevelCategory, ITopPageModel } from '@/interfaces/page.interface'
 import { useRouter } from 'next/router'
 import { API } from '@/helpers/api'
+import { SearchList } from '@/page-components/page-elements'
+
 
 const Search = () => {
   const [pages , setPages]= useState<ITopPageModel[]>([])
@@ -22,11 +24,13 @@ const Search = () => {
   },[router.query.value])
 
   console.log(pages)
-  return (
-      <>
-        Search
-    </>
-  )
+  return <div>
+          {pages.map((page)=>
+            <SearchList key={page._id} alias={page.alias}  description={page.metaDescription} title={page.title}/>
+          )}
+          
+      </div>
+  
 }
 
 export const getStaticProps : GetStaticProps<IHomeProps> = async () =>{

@@ -5,4 +5,4 @@ export * from './HhCards/HhCards'
 export * from './SeoText/SeoText'
 export * from './Skills/Skills'
 export * from './SortButtons/SortButtons'
-
+export * from './SearchList/SearchList'
