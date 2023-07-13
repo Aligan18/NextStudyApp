@@ -30,7 +30,7 @@ const HomePageComponent = () => {
           className={classes.button}
           appearance={EButtonType.PRIMARY}
         >
-          Start
+          Начать
         </Button>
       </div>
       <div className={classes.right}>
