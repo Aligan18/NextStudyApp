@@ -1,31 +1,33 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
-
 interface ISearchContext {
-    value: string;
-    setValue?: (newValue: string) => void;
+  isFocused: boolean;
+  setIsFocused: (newValue: boolean) => void;
 }
 
+export const SearchContext = createContext<ISearchContext>({
+  isFocused: false,
+  setIsFocused: () => {},
+});
 
+export const SearchProvider = ({
+  isFocused,
+  children,
+}: ISearchContext & { children: ReactNode }) => {
+  const [searchIsFocused, setSearchIsFocused] = useState<boolean>(isFocused);
+  const changeIsFocused = (newValue: boolean) => {
+    setSearchIsFocused(newValue);
+  };
 
-
-export const SearchContext = createContext<ISearchContext >({value : ""})
-
-export const SearchProvider = ({value, children} : ISearchContext & {children: ReactNode}) =>{
-
-    const [searchValue, setSearchValue] =useState<string>(value)
-    const setValue = (newValue:string) =>{
-        setSearchValue(newValue)
-    }
-
-    return (
-    <SearchContext.Provider value={{value: searchValue ,setValue:setValue }}>
-        {children}
+  return (
+    <SearchContext.Provider
+      value={{ isFocused: searchIsFocused, setIsFocused: changeIsFocused }}
+    >
+      {children}
     </SearchContext.Provider>
-    )
-}
+  );
+};
 
-export const useSearchContext =()=>{
-   return  useContext(SearchContext)
-}
-
+export const useSearchContext = () => {
+  return useContext(SearchContext);
+};

@@ -1,16 +1,26 @@
 .wrapper {
-     position: relative;
-     width: 230px;
-     height:36px;
+  position: relative;
+  width: 225px;
+  height: 36px;
+  display: flex;
 }
+.focused {
+  transition: width 0.1s;
+  &:focus {
+    width: 250px;
+    transition: width 0.1s;
+  }
 
-
+  @media (width < 800px) {
+    &:focus {
+      width: 100%;
+    }
+  }
+}
 .button {
-    width: 30px;
-    height: 30px;
-    position:absolute;
-    right:3px;
-    top:3px;
-    box-shadow: none;
-    font-size:15px
+  width: 38px;
+  height: 38px;
+  padding: 0px 10px;
+  box-shadow: none;
+  font-size: 15px;
 }
