@@ -70,7 +70,7 @@ export const CourseInfo = ({
 
         <div className={classes.advantages}>
           <Htag className={classes.character_items} tag={EHtags.SMALL}>
-            Преимущество
+            Преимущества
           </Htag>
           <TextBox size={ETextBoxSize.SMALL}> {advantages}</TextBox>
         </div>
