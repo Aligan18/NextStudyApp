@@ -13,7 +13,7 @@ export const withLayout = <T extends Record<string, unknown> & IMenuContext>(
         menu={props.menu}
         firstCategory={props.firstCategory}
       >
-        <SearchProvider value={false}>
+        <SearchProvider isFocused={false} setIsFocused={() => {}}>
           <Layout>
             <Component {...props} />
           </Layout>
