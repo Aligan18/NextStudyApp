@@ -17,19 +17,19 @@
 <td><strong>Frontend</strong></td>  
 </tr>
 <tr>
-<td>React</td>  
+<td>Next js</td>  
 </tr>
 <tr>
-<td>Redux/toolkit</td>  
+<td>TypeScript</td>  
 </tr>
 <tr>
-<td>Storybook</td> 
+<td>Framer-motion</td> 
 </tr>
 <tr>
-<td>Jest</td>  
+<td>Scss </td>  
 </tr>
 <tr>
-<td>Webpack</td>  
+<td>Husky</td>  
 </tr>
 <tr>
 <td>Eslint</td> 
@@ -40,15 +40,7 @@
 <tr>
       <td>Stylelint</td>  
 </tr>
-<tr>
-      <td>i18next</td>  
-</tr>
-<tr>
-      <td>react-hook-form</td> 
-</tr>
-<tr>
-      <td>Sass</td>  
-</tr>
+
 </table> 
 
 <h2></h2>
